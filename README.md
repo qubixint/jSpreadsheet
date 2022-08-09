@@ -90,15 +90,6 @@ jspreadsheet(document.getElementById('spreadsheet'), {
 });
 ```
 
-Serve your html file and then you will get the rendered table in your browser
-
-![sampleTable](./docs/sampleTable.png)
-
-
-## Development
-
-See [development](development.md)
-
 ## Jspreadsheet CE History
 
 ### Jspreadsheet CE 4.6
