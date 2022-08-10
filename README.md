@@ -44,25 +44,39 @@ A basic example to integrate the JavaScript spreadsheet in your website to creat
 > `npm install jspreadsheet-ce`
 
 
-### Install using standalone library/js plugin
+### Or using standalone library/js plugin
 
 [Download ZIP](https://github.com/jspreadsheet/ce/archive/master.zip)
 put and use the files of `dist` folder in your project (js library and css files)
 
 
-## Usage 
+## Usage
 
-Add jexcel/jspreadsheet and jsuites to Angular index.html file
+### Add jexcel/jspreadsheet and jsuites to Angular index.html file
 
-```html
+```index.html
 <script src="https://bossanova.uk/jspreadsheet/v4/jexcel.js"></script>
 <script src="https://jsuites.net/v4/jsuites.js"></script>
 <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
 <link rel="stylesheet" href="https://bossanova.uk/jspreadsheet/v4/jexcel.css" type="text/css" />
 ```
 
-You should initialize your table based on a div container, such as:
-```html
+### Or add jexcel/jspreadsheet and jsuites to angular.json file
+
+```
+"styles": [
+    "src/theme/default.scss",
+    "src/styles.scss",
+    "src/themes.jsuites.css"
+],
+"scripts": [
+    "src/scripts/jexcel.js",
+    "src/scripts/jsuites.js",
+]
+```
+
+Then you should initialize your table based on a div container, such as:
+```jspreadsheet.component.html
 <div id="spreadsheet"></div>
 ```
 
