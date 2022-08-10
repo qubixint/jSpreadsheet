@@ -52,7 +52,7 @@ put and use the files of `dist` folder in your project (js library and css files
 
 ## Usage
 
-### Add jexcel/jspreadsheet and jsuites to Angular index.html file
+### Add jexcel/jspreadsheet and jsuites to Angular *index.html* file
 
 ```index.html
 <script src="https://bossanova.uk/jspreadsheet/v4/jexcel.js"></script>
@@ -61,7 +61,7 @@ put and use the files of `dist` folder in your project (js library and css files
 <link rel="stylesheet" href="https://bossanova.uk/jspreadsheet/v4/jexcel.css" type="text/css" />
 ```
 
-### Or add jexcel/jspreadsheet and jsuites to angular.json file
+### Or declare jexcel/jspreadsheet and jsuites to *angular.json* file
 
 ```
 "styles": [
@@ -81,27 +81,10 @@ Then you should initialize your table based on a div container, such as:
 ```
 
 To initialize a Jspreadsheet CE table you should run JavaScript, such as:
-```javascript
-var data = [
-    ['Jazz', 'Honda', '2019-02-12', '', true, '$ 2.000,00', '#777700'],
-    ['Civic', 'Honda', '2018-07-11', '', true, '$ 4.000,01', '#007777'],
-];
-
-jspreadsheet(document.getElementById('spreadsheet'), {
-    data:data,
-    columns: [
-        { type: 'text', title:'Car', width:120 },
-        { type: 'dropdown', title:'Make', width:200, source:[ "Alfa Romeo", "Audi", "Bmw" ] },
-        { type: 'calendar', title:'Available', width:200 },
-        { type: 'image', title:'Photo', width:120 },
-        { type: 'checkbox', title:'Stock', width:80 },
-        { type: 'numeric', title:'Price', width:100, mask:'$ #.##,00', decimal:',' },
-        { type: 'color', width:100, render:'square', }
-     ]
-});
+```jspreadhseet.component.ts
 ```
 
-## Jspreadsheet CE History
+# Jspreadsheet CE History
 
 ### Jspreadsheet CE 4.6
 
