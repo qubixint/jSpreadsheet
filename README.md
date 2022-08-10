@@ -7,8 +7,7 @@
 - Please use Jsuites v4
 - New mask system (https://jsfiddle.net/spreadsheet/vmjo34r8/)
 
-
-<br><br>
+<hr>
 
 [**Jspreadsheet CE**](https://bossanova.uk/jspreadsheet/v4/) is a lightweight Vanilla JavaScript plugin to create amazing web-based interactive HTML tables and spreadsheets compatible
 with other spreadsheet software. You can create an online spreadsheet table from a JS array,
@@ -38,8 +37,13 @@ requirements. It is a complete solution for web data management. Create amazing 
 
 A basic example to integrate the JavaScript spreadsheet in your website to create your first online spreadsheet. <https://codepen.io/hchiam/pen/qBRzXKK>
 
+<hr>
 
 ## Installation
+
+<ol>
+    <li>test</li>
+</ol>
 
 ### As node package
 `npm install jspreadsheet-ce`
@@ -60,8 +64,6 @@ Add jexcel/jspreadsheet and jsuites to Angular index.html file
 <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
 <link rel="stylesheet" href="https://bossanova.uk/jspreadsheet/v4/jexcel.css" type="text/css" />
 ```
-
--- OR --
 
 You should initialize your table based on a div container, such as:
 ```html
