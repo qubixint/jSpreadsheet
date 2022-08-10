@@ -29,8 +29,6 @@ A basic example to integrate the JavaScript spreadsheet in your website to creat
 - Please use Jsuites v4
 - New mask system (https://jsfiddle.net/spreadsheet/vmjo34r8/)
 <br>
-<hr>
-<br>
 
 # Installation and usage
 
