@@ -30,6 +30,7 @@ A basic example to integrate the JavaScript spreadsheet in your website to creat
 - New mask system (https://jsfiddle.net/spreadsheet/vmjo34r8/)
 <br>
 <hr>
+<br>
 
 # Installation and usage
 
