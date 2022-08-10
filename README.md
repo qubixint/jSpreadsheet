@@ -40,7 +40,7 @@ A basic example to integrate the JavaScript spreadsheet in your website to creat
 ## Installation
 
 * As node package
-* 
+
 > `npm install jspreadsheet-ce`
 
 As standalone library/js plugin
