@@ -2,13 +2,6 @@
 
 <b>Jexcel CE</b> has been renamed to <b>Jspreadsheet CE</b><br>
 
-## News
-- <b>Important</b>: Please import jspreadsheet.css (jexcel.css is not longer available in this package).
-- Please use Jsuites v4
-- New mask system (https://jsfiddle.net/spreadsheet/vmjo34r8/)
-<br>
-<hr>
-
 [**Jspreadsheet CE**](https://bossanova.uk/jspreadsheet/v4/) is a lightweight Vanilla JavaScript plugin to create amazing web-based interactive HTML tables and spreadsheets compatible
 with other spreadsheet software. You can create an online spreadsheet table from a JS array,
 JSON, CSV or XSLX files. You can copy from excel and paste straight to your Jspreadsheet CE spreadsheet and vice versa.
@@ -36,6 +29,11 @@ requirements. It is a complete solution for web data management. Create amazing 
 ### Basic demo 
 
 A basic example to integrate the JavaScript spreadsheet in your website to create your first online spreadsheet. <https://codepen.io/hchiam/pen/qBRzXKK>
+
+## News
+- <b>Important</b>: Please import jspreadsheet.css (jexcel.css is not longer available in this package).
+- Please use Jsuites v4
+- New mask system (https://jsfiddle.net/spreadsheet/vmjo34r8/)
 <br>
 <hr>
 
