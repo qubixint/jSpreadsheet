@@ -69,7 +69,7 @@ To initialize a Jspreadsheet CE table you should run JavaScript, such as:
 
 export class JexcelTableTestComponent {
 
-	@ViewChild("spreadsheet") spreadsheet!: ElementRef;
+@ViewChild("spreadsheet") spreadsheet!: ElementRef;
   title = "CodeSandbox";
 
   ngAfterViewInit() {
