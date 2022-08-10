@@ -28,7 +28,6 @@ A basic example to integrate the JavaScript spreadsheet in your website to creat
 - <b>Important</b>: Please import jspreadsheet.css (jexcel.css is not longer available in this package).
 - Please use Jsuites v4
 - New mask system (https://jsfiddle.net/spreadsheet/vmjo34r8/)
-<br>
 
 # Installation and usage
 
@@ -61,7 +60,7 @@ A basic example to integrate the JavaScript spreadsheet in your website to creat
     "src/scripts/jsuites.js",
 ]
 ```
-Then you should initialize your table based on a div container, such as:
+Then initialize your table based on a div container, such as:
 ```jspreadsheet.component.html
 <div id="spreadsheet"></div>
 ```
