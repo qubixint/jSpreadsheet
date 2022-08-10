@@ -34,6 +34,10 @@ requirements. It is a complete solution for web data management. Create amazing 
 
 ![The JavaScript spreadsheet](https://bossanova.uk/templates/default/img/jexcel.gif)
 
+### Basic demo 
+
+A basic example to integrate the JavaScript spreadsheet in your website to create your first online spreadsheet. <https://codepen.io/hchiam/pen/qBRzXKK>
+
 
 ## Installation
 
@@ -45,17 +49,10 @@ requirements. It is a complete solution for web data management. Create amazing 
 
 put and use the files of `dist` folder in your project (js library and css files)
 
-### With a framework
-
-See examples section for code examples of jspreadsheets with popular frameworks
-### Basic demo 
-
-A basic example to integrate the JavaScript spreadsheet in your website to create your first online spreadsheet. <https://codepen.io/hchiam/pen/qBRzXKK>
-
 
 #### Usage 
 
-Add jexcel/jspreadsheet and jsuites to your html file
+Add jexcel/jspreadsheet and jsuites to Angular index.html file
 
 ```html
 <script src="https://bossanova.uk/jspreadsheet/v4/jexcel.js"></script>
@@ -63,6 +60,8 @@ Add jexcel/jspreadsheet and jsuites to your html file
 <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
 <link rel="stylesheet" href="https://bossanova.uk/jspreadsheet/v4/jexcel.css" type="text/css" />
 ```
+
+-- OR --
 
 You should initialize your table based on a div container, such as:
 ```html
