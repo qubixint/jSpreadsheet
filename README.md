@@ -40,16 +40,23 @@ A basic example to integrate the JavaScript spreadsheet in your website to creat
 ## Installation
 
 <ol>
-    <li>test</li>
+    <li>
+        ### As node package
+        `npm install jspreadsheet-ce`
+    </li>
+    
+    <li>
+        ### As standalone library/js plugin
+        [Download ZIP](https://github.com/jspreadsheet/ce/archive/master.zip)
+        put and use the files of `dist` folder in your project (js library and css files)
+    </li>
+    
+    <li>
+        ### As standalone library/js plugin
+        [Download ZIP](https://github.com/jspreadsheet/ce/archive/master.zip)
+    </li>
+    
 </ol>
-
-### As node package
-`npm install jspreadsheet-ce`
-
-### As standalone library/js plugin
-[Download ZIP](https://github.com/jspreadsheet/ce/archive/master.zip)
-
-put and use the files of `dist` folder in your project (js library and css files)
 
 
 #### Usage 
