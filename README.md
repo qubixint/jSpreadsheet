@@ -1,10 +1,12 @@
 # Jspreadsheet CE v4: The JavaScript spreadsheet for Angular
+
 [**Jspreadsheet CE**](https://bossanova.uk/jspreadsheet/v4/) is a lightweight Vanilla JavaScript plugin to create amazing web-based interactive HTML tables and spreadsheets compatible
 with other spreadsheet software. You can create an online spreadsheet table from a JS array,
 JSON, CSV or XSLX files. You can copy from excel and paste straight to your Jspreadsheet CE spreadsheet and vice versa.
 It is very easy to integrate any third party JavaScript plugins to create your own custom columns, custom editors, and customize any
 feature into your application. Jspreadsheet CE has plenty of different input options through its native column types to cover the most common web-based application
 requirements. It is a complete solution for web data management. Create amazing applications with Jspreadsheet CE JavaScript spreadsheet.
+
 ## Main advantages 
 - Make rich and user-friendly web interfaces and applications. 
 - You can easily handle complicated data inputs in a way users are used..
@@ -15,23 +17,29 @@ requirements. It is a complete solution for web data management. Create amazing 
 - Lean, fast and simple to use.
 - Thousands of successful user cases.
 - Speed up your work dealing with difficult data entry in a web-based software.
+- 
 ## Screenshot
 ![The JavaScript spreadsheet](https://bossanova.uk/templates/default/img/jexcel.gif)
+
 ## Basic demo 
 A basic example to integrate the JavaScript spreadsheet in your website to create your first online spreadsheet. <https://codepen.io/hchiam/pen/qBRzXKK>
+
 ## News
 - <b>Important</b>: Please import jspreadsheet.css (jexcel.css is not longer available in this package).
 - Please use Jsuites v4
 - New mask system (https://jsfiddle.net/spreadsheet/vmjo34r8/)
 <br>
 <hr>
+
 # Installation and usage
+
 ### Install using npm (node package manager)
+
 > `npm install jspreadsheet-ce`
+
 ### Or using standalone library/js plugin
 
 [Download ZIP](https://github.com/jspreadsheet/ce/archive/master.zip) and and then use the files of `dist` folder in your project (js library and css files)
-
 
 ## Usage
   
