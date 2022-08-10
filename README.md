@@ -41,8 +41,8 @@ A basic example to integrate the JavaScript spreadsheet in your website to creat
 
 <ol>
     <li>
-        ### As node package
-        `npm install jspreadsheet-ce`
+        <h3>As node package</h3>
+        <pre>`npm install jspreadsheet-ce`</pre>
     </li>
     
     <li>
