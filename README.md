@@ -66,6 +66,24 @@ Then initialize your table based on a div container, such as:
 ```
 To initialize a Jspreadsheet CE table you should run JavaScript, such as:
 ```jspreadhseet.component.ts
+
+export class JexcelTableTestComponent {
+
+	@ViewChild("spreadsheet") spreadsheet!: ElementRef;
+  title = "CodeSandbox";
+
+  ngAfterViewInit() {
+    jspreadsheet(this.spreadsheet.nativeElement, {
+      data: [[]],
+      columns: [
+        { type: "dropdown", source: ["Y", "N"] },
+        { type: "color", render: "square" }
+      ],
+      minDimensions: [10, 10]
+    },);
+  }
+}
+
 ```
 # Jspreadsheet CE History
 ### Jspreadsheet CE 4.6
