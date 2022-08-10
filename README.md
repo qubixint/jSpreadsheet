@@ -26,7 +26,7 @@ requirements. It is a complete solution for web data management. Create amazing 
 
 ![The JavaScript spreadsheet](https://bossanova.uk/templates/default/img/jexcel.gif)
 
-### Basic demo 
+## Basic demo 
 
 A basic example to integrate the JavaScript spreadsheet in your website to create your first online spreadsheet. <https://codepen.io/hchiam/pen/qBRzXKK>
 
@@ -37,21 +37,20 @@ A basic example to integrate the JavaScript spreadsheet in your website to creat
 <br>
 <hr>
 
-## Installation
+# Installation and usage
 
-* As node package
+## Install using npm (node package manager)
 
 > `npm install jspreadsheet-ce`
 
-As standalone library/js plugin
+
+## Install using standalone library/js plugin
+
 [Download ZIP](https://github.com/jspreadsheet/ce/archive/master.zip)
 put and use the files of `dist` folder in your project (js library and css files)
 
-As standalone library/js plugin
-[Download ZIP](https://github.com/jspreadsheet/ce/archive/master.zip)
 
-
-#### Usage 
+## Usage 
 
 Add jexcel/jspreadsheet and jsuites to Angular index.html file
 
