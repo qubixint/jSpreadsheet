@@ -416,7 +416,7 @@ var formula = (function () {
             return serial(end_date) - serial(start_date);
         };
 
-        exports.DAYS360 = function (start_date, end_date, method) {};
+        exports.DAYS360 = function (start_date, end_date, method) { };
 
         exports.EDATE = function (start_date, months) {
             start_date = utils.parseDate(start_date);
@@ -515,14 +515,14 @@ var formula = (function () {
             return serial_number.getMonth() + 1;
         };
 
-        exports.NETWORKDAYS = function (start_date, end_date, holidays) {};
+        exports.NETWORKDAYS = function (start_date, end_date, holidays) { };
 
         exports.NETWORKDAYS.INTL = function (
             start_date,
             end_date,
             weekend,
             holidays
-        ) {};
+        ) { };
 
         exports.NOW = function () {
             return new Date();
@@ -578,16 +578,16 @@ var formula = (function () {
             return WEEK_TYPES[return_type][day];
         };
 
-        exports.WEEKNUM = function (serial_number, return_type) {};
+        exports.WEEKNUM = function (serial_number, return_type) { };
 
-        exports.WORKDAY = function (start_date, days, holidays) {};
+        exports.WORKDAY = function (start_date, days, holidays) { };
 
         exports.WORKDAY.INTL = function (
             start_date,
             days,
             weekend,
             holidays
-        ) {};
+        ) { };
 
         exports.YEAR = function (serial_number) {
             serial_number = utils.parseDate(serial_number);
@@ -601,7 +601,7 @@ var formula = (function () {
             return new Date(year, 1, 29).getMonth() === 1;
         }
 
-        exports.YEARFRAC = function (start_date, end_date, basis) {};
+        exports.YEARFRAC = function (start_date, end_date, basis) { };
 
         function serial(date) {
             var addOn = date > -2203891200000 ? 2 : 1;
@@ -716,9 +716,9 @@ var formula = (function () {
                 : sum / resultIndexes.length;
         };
 
-        exports.DCOUNT = function (database, field, criteria) {};
+        exports.DCOUNT = function (database, field, criteria) { };
 
-        exports.DCOUNTA = function (database, field, criteria) {};
+        exports.DCOUNTA = function (database, field, criteria) { };
 
         exports.DGET = function (database, field, criteria) {
             // Return error if field is not a number and not a string
@@ -815,15 +815,15 @@ var formula = (function () {
             return result;
         };
 
-        exports.DSTDEV = function (database, field, criteria) {};
+        exports.DSTDEV = function (database, field, criteria) { };
 
-        exports.DSTDEVP = function (database, field, criteria) {};
+        exports.DSTDEVP = function (database, field, criteria) { };
 
-        exports.DSUM = function (database, field, criteria) {};
+        exports.DSUM = function (database, field, criteria) { };
 
-        exports.DVAR = function (database, field, criteria) {};
+        exports.DVAR = function (database, field, criteria) { };
 
-        exports.DVARP = function (database, field, criteria) {};
+        exports.DVARP = function (database, field, criteria) { };
 
         exports.MATCH = function (lookupValue, lookupArray, matchType) {
             if (!lookupValue && !lookupArray) {
@@ -898,13 +898,13 @@ var formula = (function () {
             return /^[01]{1,10}$/.test(number);
         }
 
-        exports.BESSELI = function (x, n) {};
+        exports.BESSELI = function (x, n) { };
 
-        exports.BESSELJ = function (x, n) {};
+        exports.BESSELJ = function (x, n) { };
 
-        exports.BESSELK = function (x, n) {};
+        exports.BESSELK = function (x, n) { };
 
-        exports.BESSELY = function (x, n) {};
+        exports.BESSELY = function (x, n) { };
 
         exports.BIN2DEC = function (number) {
             // Return error if number is not binary or contains more than 10
@@ -2245,13 +2245,13 @@ var formula = (function () {
             return number1 === number2 ? 1 : 0;
         };
 
-        exports.ERF = function (lower_bound, upper_bound) {};
+        exports.ERF = function (lower_bound, upper_bound) { };
 
-        exports.ERF.PRECISE = function () {};
+        exports.ERF.PRECISE = function () { };
 
-        exports.ERFC = function (x) {};
+        exports.ERFC = function (x) { };
 
-        exports.ERFC.PRECISE = function () {};
+        exports.ERFC.PRECISE = function () { };
 
         exports.GESTEP = function (number, step) {
             step = step || 0;
@@ -2274,7 +2274,7 @@ var formula = (function () {
             // Check if number is negative
             var negative =
                 number.length === 10 &&
-                number.substring(0, 1).toLowerCase() === "f"
+                    number.substring(0, 1).toLowerCase() === "f"
                     ? true
                     : false;
 
@@ -2460,15 +2460,15 @@ var formula = (function () {
                         isNaN(inumber.substring(plus + 1, inumber.length - 1))
                         ? error.num
                         : Number(
-                              inumber.substring(plus + 1, inumber.length - 1)
-                          );
+                            inumber.substring(plus + 1, inumber.length - 1)
+                        );
                 } else {
                     return isNaN(inumber.substring(0, minus)) ||
                         isNaN(inumber.substring(minus + 1, inumber.length - 1))
                         ? error.num
                         : -Number(
-                              inumber.substring(minus + 1, inumber.length - 1)
-                          );
+                            inumber.substring(minus + 1, inumber.length - 1)
+                        );
                 }
             } else {
                 if (unit) {
@@ -3371,7 +3371,7 @@ var formula = (function () {
                     principal +=
                         payment -
                         (exports.FV(rate, i - 2, payment, value, 1) - payment) *
-                            rate;
+                        rate;
                 } else {
                     principal +=
                         payment -
@@ -4038,7 +4038,7 @@ var formula = (function () {
                 var f2 =
                     periods * t2 * present -
                     (payment * (t1 - 1) * (rate * type + 1)) /
-                        Math.pow(rate, 2);
+                    Math.pow(rate, 2);
                 var f3 =
                     (periods * payment * t2 * (rate * type + 1)) / rate +
                     (payment * (t1 - 1) * type) / rate;
@@ -4917,7 +4917,7 @@ var formula = (function () {
             if (o instanceof Error) {
                 return o;
             }
-            for (var i, j, n, d, r = 1; (n = o.pop()) !== undefined; ) {
+            for (var i, j, n, d, r = 1; (n = o.pop()) !== undefined;) {
                 while (n > 1) {
                     if (n % 2) {
                         for (
@@ -5551,7 +5551,7 @@ var formula = (function () {
                     }
                 }
                 return result;
-            } catch (error) {}
+            } catch (error) { }
         };
 
         exports.JOIN = function (array, separator) {
@@ -6347,11 +6347,11 @@ var formula = (function () {
             order = order || false;
             var sort = order
                 ? function (a, b) {
-                      return a - b;
-                  }
+                    return a - b;
+                }
                 : function (a, b) {
-                      return b - a;
-                  };
+                    return b - a;
+                };
             range = range.sort(sort);
 
             var length = range.length;
@@ -6376,11 +6376,11 @@ var formula = (function () {
             order = order || false;
             var sort = order
                 ? function (a, b) {
-                      return a - b;
-                  }
+                    return a - b;
+                }
                 : function (a, b) {
-                      return b - a;
-                  };
+                    return b - a;
+                };
             range = range.sort(sort);
             return range.indexOf(number) + 1;
         };
@@ -6520,9 +6520,9 @@ var formula = (function () {
             return cumulative
                 ? 1 - Math.exp(-Math.pow(x / beta, alpha))
                 : (Math.pow(x, alpha - 1) *
-                      Math.exp(-Math.pow(x / beta, alpha)) *
-                      alpha) /
-                      Math.pow(beta, alpha);
+                    Math.exp(-Math.pow(x / beta, alpha)) *
+                    alpha) /
+                Math.pow(beta, alpha);
         };
 
         exports.Z = {};
@@ -6913,8 +6913,8 @@ if (!jSuites && typeof require === "function") {
     typeof exports === "object" && typeof module !== "undefined"
         ? (module.exports = factory())
         : typeof define === "function" && define.amd
-        ? define(factory)
-        : (global.jspreadsheet = global.jexcel = factory());
+            ? define(factory)
+            : (global.jspreadsheet = global.jexcel = factory());
 })(this, function () {
     "use strict";
 
@@ -7658,7 +7658,7 @@ if (!jSuites && typeof require === "function") {
                     img.src = "//bossanova.uk/jspreadsheet/logo.png";
                     ads.appendChild(img);
                 }
-            } catch (exception) {}
+            } catch (exception) { }
             var span = document.createElement("span");
             span.innerHTML = "Jspreadsheet CE";
             ads.appendChild(span);
@@ -7824,7 +7824,7 @@ if (!jSuites && typeof require === "function") {
                         for (var i = 0; i < obj.options.columns.length; i++) {
                             row[i] =
                                 obj.options.data[j][
-                                    obj.options.columns[i].name
+                                obj.options.columns[i].name
                                 ];
                         }
                         data.push(row);
@@ -8999,7 +8999,7 @@ if (!jSuites && typeof require === "function") {
                     width: "100%",
                     position:
                         obj.options.tableOverflow == true ||
-                        obj.options.fullscreen == true
+                            obj.options.fullscreen == true
                             ? true
                             : false,
                     onclose: function (o) {
@@ -9189,7 +9189,7 @@ if (!jSuites && typeof require === "function") {
                                 : false,
                             autocomplete:
                                 obj.options.columns[x].autocomplete ||
-                                obj.options.columns[x].type == "autocomplete"
+                                    obj.options.columns[x].type == "autocomplete"
                                     ? true
                                     : false,
                             opened: true,
@@ -9198,7 +9198,7 @@ if (!jSuites && typeof require === "function") {
                             height: editor.style.minHeight,
                             position:
                                 obj.options.tableOverflow == true ||
-                                obj.options.fullscreen == true
+                                    obj.options.fullscreen == true
                                     ? true
                                     : false,
                             onclose: function () {
@@ -9762,7 +9762,7 @@ if (!jSuites && typeof require === "function") {
             var b = new Option();
             b.innerHTML = a;
             var c = null;
-            for (a = b.getElementsByTagName("script"); (c = a[0]); )
+            for (a = b.getElementsByTagName("script"); (c = a[0]);)
                 c.parentNode.removeChild(c);
             return b.innerHTML;
         };
@@ -9817,7 +9817,7 @@ if (!jSuites && typeof require === "function") {
                 if (
                     obj.options.columns[x].editor &&
                     typeof obj.options.columns[x].editor.updateCell ==
-                        "function"
+                    "function"
                 ) {
                     value = obj.options.columns[x].editor.updateCell(
                         obj.records[y][x],
@@ -9855,9 +9855,9 @@ if (!jSuites && typeof require === "function") {
                         // Update data and cell
                         obj.records[y][x].children[0].checked =
                             value == 1 ||
-                            value == true ||
-                            value == "true" ||
-                            value == "TRUE"
+                                value == true ||
+                                value == "true" ||
+                                value == "TRUE"
                                 ? true
                                 : false;
                         obj.options.data[y][x] =
@@ -11395,22 +11395,22 @@ if (!jSuites && typeof require === "function") {
                                 return valueA === "" && valueB !== ""
                                     ? 1
                                     : valueA !== "" && valueB === ""
-                                    ? -1
-                                    : valueA > valueB
-                                    ? 1
-                                    : valueA < valueB
-                                    ? -1
-                                    : 0;
+                                        ? -1
+                                        : valueA > valueB
+                                            ? 1
+                                            : valueA < valueB
+                                                ? -1
+                                                : 0;
                             } else {
                                 return valueA === "" && valueB !== ""
                                     ? 1
                                     : valueA !== "" && valueB === ""
-                                    ? -1
-                                    : valueA > valueB
-                                    ? -1
-                                    : valueA < valueB
-                                    ? 1
-                                    : 0;
+                                        ? -1
+                                        : valueA > valueB
+                                            ? -1
+                                            : valueA < valueB
+                                                ? 1
+                                                : 0;
                             }
                         };
                     };
@@ -12572,7 +12572,7 @@ if (!jSuites && typeof require === "function") {
                                     ].colspan = colspan;
                                     obj.thead.children[j].children[
                                         obj.thead.children[j].children.length -
-                                            1
+                                        1
                                     ].setAttribute("colspan", colspan);
                                 }
                             } else {
@@ -13246,14 +13246,14 @@ if (!jSuites && typeof require === "function") {
                                 // Get value
                                 if (
                                     typeof obj.options.data[position[1]] !=
-                                        "undefined" &&
+                                    "undefined" &&
                                     typeof obj.options.data[position[1]][
-                                        position[0]
+                                    position[0]
                                     ] != "undefined"
                                 ) {
                                     var value =
                                         obj.options.data[position[1]][
-                                            position[0]
+                                        position[0]
                                         ];
                                 } else {
                                     var value = "";
@@ -13366,12 +13366,12 @@ if (!jSuites && typeof require === "function") {
         /**
          * Get row number
          */
-        obj.row = function (cell) {};
+        obj.row = function (cell) { };
 
         /**
          * Get col number
          */
-        obj.col = function (cell) {};
+        obj.col = function (cell) { };
 
         obj.up = function (shiftKey, ctrlKey) {
             if (shiftKey) {
@@ -15689,7 +15689,7 @@ if (!jSuites && typeof require === "function") {
                             if (obj.loadDown()) {
                                 if (
                                     obj.content.scrollTop +
-                                        obj.content.clientHeight >
+                                    obj.content.clientHeight >
                                     obj.content.scrollHeight - 10
                                 ) {
                                     obj.content.scrollTop =
@@ -15963,10 +15963,10 @@ if (!jSuites && typeof require === "function") {
                     var y = parseInt(jexcel.current.selectedCell[1]);
                     var displaySize = Math.floor(
                         jexcel.current.content.offsetHeight /
-                            jexcel.current.records[
-                                jexcel.current.selectedCell[3]
-                            ][jexcel.current.selectedCell[2]].offsetHeight -
-                            1
+                        jexcel.current.records[
+                            jexcel.current.selectedCell[3]
+                        ][jexcel.current.selectedCell[2]].offsetHeight -
+                        1
                     );
 
                     //find first visible row
@@ -16006,10 +16006,10 @@ if (!jSuites && typeof require === "function") {
                     var y = parseInt(jexcel.current.selectedCell[1]);
                     var displaySize = Math.floor(
                         jexcel.current.content.offsetHeight /
-                            jexcel.current.records[
-                                jexcel.current.selectedCell[3]
-                            ][jexcel.current.selectedCell[2]].offsetHeight -
-                            1
+                        jexcel.current.records[
+                            jexcel.current.selectedCell[3]
+                        ][jexcel.current.selectedCell[2]].offsetHeight -
+                        1
                     );
 
                     //find first visible row
@@ -16216,7 +16216,7 @@ if (!jSuites && typeof require === "function") {
                                             // Start edition
                                             jexcel.current.openEditor(
                                                 jexcel.current.records[rowId][
-                                                    columnId
+                                                columnId
                                                 ],
                                                 true
                                             );
@@ -16225,7 +16225,7 @@ if (!jSuites && typeof require === "function") {
                                         // Start edition with current content F2
                                         jexcel.current.openEditor(
                                             jexcel.current.records[rowId][
-                                                columnId
+                                            columnId
                                             ],
                                             false
                                         );
@@ -16240,7 +16240,7 @@ if (!jSuites && typeof require === "function") {
                                             String.fromCharCode(
                                                 e.keyCode
                                             ).toLowerCase() ==
-                                                e.key.toLowerCase()) &&
+                                            e.key.toLowerCase()) &&
                                             jexcel.validLetter(
                                                 String.fromCharCode(e.keyCode)
                                             ))
@@ -16248,7 +16248,7 @@ if (!jSuites && typeof require === "function") {
                                         // Start edition
                                         jexcel.current.openEditor(
                                             jexcel.current.records[rowId][
-                                                columnId
+                                            columnId
                                             ],
                                             true
                                         );
@@ -16406,7 +16406,7 @@ if (!jSuites && typeof require === "function") {
                                 if (
                                     jexcel.current.selectedHeader == columnId &&
                                     jexcel.current.options.allowRenameColumn ==
-                                        true
+                                    true
                                 ) {
                                     jexcel.timeControl = setTimeout(
                                         function () {
@@ -16670,7 +16670,7 @@ if (!jSuites && typeof require === "function") {
                     for (var j = 0; j < jexcel.current.records.length; j++) {
                         if (
                             jexcel.current.records[j][
-                                jexcel.current.resizing.column
+                            jexcel.current.resizing.column
                             ]
                         ) {
                             jexcel.current.records[j][
@@ -16711,7 +16711,7 @@ if (!jSuites && typeof require === "function") {
                         for (var j = 0; j < jexcel.current.rows.length; j++) {
                             if (
                                 jexcel.current.records[j][
-                                    jexcel.current.dragging.column
+                                jexcel.current.dragging.column
                                 ]
                             ) {
                                 jexcel.current.records[j][
@@ -16787,7 +16787,7 @@ if (!jSuites && typeof require === "function") {
                         jexcel.current.copyData(
                             jexcel.current.selection[0],
                             jexcel.current.selection[
-                                jexcel.current.selection.length - 1
+                            jexcel.current.selection.length - 1
                             ]
                         );
 
@@ -17206,11 +17206,31 @@ if (!jSuites && typeof require === "function") {
         if (jexcel.current && jexcel.current.selectedCell) {
             if (!jexcel.current.edition) {
                 if (jexcel.current.options.editable == true) {
+
                     var callPaste = function (data) {
-                        var minRow = parseInt(jexcel.current.selectedCell[1]);
-                        var maxRow = parseInt(jexcel.current.selectedCell[3]);
-                        var minCol = parseInt(jexcel.current.selectedCell[0]);
-                        var maxCol = parseInt(jexcel.current.selectedCell[2]);
+                        var selectedRows = jexcel.current.getSelectedRows(true);
+                        var selectedColumns = jexcel.current.getSelectedColumns();
+                        var minRow, maxRow, minCol, maxCol;
+
+                        if (jexcel.current.getSelectedRows(true).length == 1) {
+                            minRow = selectedRows[0];
+                            maxRow = selectedRows[0];
+                        }
+
+                        if (jexcel.current.getSelectedRows(true).length > 1) {
+                            minRow = selectedRows[0];
+                            maxRow = selectedRows[selectedRows.length - 1];
+                        } 
+
+                        if (jexcel.current.getSelectedColumns().length == 1) {
+                            minCol = selectedColumns[0];
+                            maxCol = selectedColumns[0];
+                        }
+                        
+                        if (jexcel.current.getSelectedColumns().length > 1) {
+                            minCol = selectedColumns[0];
+                            maxCol = selectedColumns[selectedColumns.length - 1];
+                        } 
 
                         for (var row = minRow; row <= maxRow; row++) {
                             for (var col = minCol; col <= maxCol; col++) {
@@ -18036,7 +18056,7 @@ if (!jSuites && typeof require === "function") {
         /**
          * Extract json configuration from a TABLE DOM tag
          */
-        component.createFromTable = function () {};
+        component.createFromTable = function () { };
 
         /**
          * Helper injectArray
