@@ -43,8 +43,6 @@ A basic example to integrate the JavaScript spreadsheet in your website to creat
   
 ### Add jexcel/jspreadsheet and jsuites styles to Angular *index.html* file
 ```index.html
-<script src="https://bossanova.uk/jspreadsheet/v4/jexcel.js"></script>
-<script src="https://jsuites.net/v4/jsuites.js"></script>
 <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
 <link rel="stylesheet" href="https://bossanova.uk/jspreadsheet/v4/jexcel.css" type="text/css" />
 ```
@@ -57,7 +55,8 @@ A basic example to integrate the JavaScript spreadsheet in your website to creat
 "styles": [
     "src/theme/default.scss",
     "src/styles.scss",
-    "src/themes.jsuites.css"
+    "src/themes/jsuites.css",
+    "src/themes/jexcel.css"
 ]
 ```
 Then initialize your table based on a div container, such as:
