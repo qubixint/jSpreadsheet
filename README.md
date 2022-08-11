@@ -44,7 +44,7 @@ Add this line to the package.json file
 }
 ```
 
-> `npm install jspreadsheet-ce`
+> `npm install`
 
 ### Or using standalone library/js plugin
 
