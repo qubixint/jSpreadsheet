@@ -17,7 +17,7 @@ requirements. It is a complete solution for web data management. Create amazing 
 - Lean, fast and simple to use.
 - Thousands of successful user cases.
 - Speed up your work dealing with difficult data entry in a web-based software.
-- 
+
 ## Screenshot
 ![The JavaScript spreadsheet](https://bossanova.uk/templates/default/img/jexcel.gif)
 
