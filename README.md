@@ -64,7 +64,7 @@ A basic example to integrate the JavaScript spreadsheet in your website to creat
 ```
 Then initialize your table based on a div container, such as:
 ```jspreadsheet.component.html
-<div id="spreadsheet"></div>
+<div #spreadsheet></div>
 ```
 To initialize a Jspreadsheet CE table you should run JavaScript, such as:
 ```jspreadhseet.component.ts
