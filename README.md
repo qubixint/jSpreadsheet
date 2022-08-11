@@ -33,6 +33,17 @@ A basic example to integrate the JavaScript spreadsheet in your website to creat
 
 ### Install using npm (node package manager)
 
+Add this line to the package.json file
+
+```package.json
+"dependencies": {
+    "jspreadsheet-ce": "git+https://github.com/eXamqle/jSpreadsheet-ce-Qubix-International.git"
+},
+  "devDependencies": {
+    "@types/jspreadsheet-ce": "^4.7.3"
+}
+```
+
 > `npm install jspreadsheet-ce`
 
 ### Or using standalone library/js plugin
