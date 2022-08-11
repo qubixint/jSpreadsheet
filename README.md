@@ -50,7 +50,7 @@ A basic example to integrate the JavaScript spreadsheet in your website to creat
 ```
 ### Or download and declare jexcel/jspreadsheet styles and jsuites to *angular.json* file
 
-[jSuites CSS File](https://jsuites.net/v4/jsuites.css)
+[jSuites CSS File](https://jsuites.net/v4/jsuites.css) <br>
 [jExcel CSS File](https://bossanova.uk/jspreadsheet/v4/jexcel.css)
 
 ```
