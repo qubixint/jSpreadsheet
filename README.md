@@ -55,8 +55,8 @@ A basic example to integrate the JavaScript spreadsheet in your website to creat
 "styles": [
     "src/theme/default.scss",
     "src/styles.scss",
-    "src/themes/jsuites.css",
-    "src/themes/jexcel.css"
+    "src/themes/jsuites.scss", <-- Rename .css to .scss
+    "src/themes/jexcel.scss"   <-- Rename .css to .scss
 ]
 ```
 Then initialize your table based on a div container, such as:
