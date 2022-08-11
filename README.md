@@ -66,7 +66,7 @@ Then initialize your table based on a div container, such as:
 ```jspreadsheet.component.html
 <div #spreadsheet></div>
 ```
-To initialize a Jspreadsheet CE table you should run JavaScript, such as:
+To initialize a Jspreadsheet CE table you should run TypeScript, such as:
 ```jspreadhseet.component.ts
 
 export class JexcelTableTestComponent {
