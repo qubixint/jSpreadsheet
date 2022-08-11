@@ -50,8 +50,8 @@ A basic example to integrate the JavaScript spreadsheet in your website to creat
 
 
 <ol>
-  <li>[jSuites CSS File](https://jsuites.net/v4/jsuites.css) </li>
-  <li>[jExcel CSS File](https://bossanova.uk/jspreadsheet/v4/jexcel.css)</li>
+  <li>jSuites CSS File: https://jsuites.net/v4/jsuites.css</li>
+  <li>jExcel CSS File: https://bossanova.uk/jspreadsheet/v4/jexcel.css</li>
 </ol>
 
 ```
