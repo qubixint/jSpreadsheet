@@ -69,7 +69,7 @@ Then initialize your table based on a div container, such as:
 To initialize a Jspreadsheet CE table you should run TypeScript, such as:
 ```jspreadhseet.component.ts
 
-export class JexcelTableTestComponent {
+export class SpreadsheetComponent {
 
 @ViewChild("spreadsheet") spreadsheet!: ElementRef;
   title = "CodeSandbox";
