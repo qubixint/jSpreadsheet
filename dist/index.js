@@ -15880,6 +15880,10 @@ if (!jSuites && typeof require === "function") {
     /**
      * Events
      */
+
+    // Set the variable for the number of the visible rows
+    var numberOfVisibleRows = 0;
+
     jexcel.keyDownControls = function (e) {
         if (jexcel.current) {
             if (jexcel.current.edition) {
@@ -15956,95 +15960,6 @@ if (!jSuites && typeof require === "function") {
                         );
                     } else {
                         jexcel.current.edition[0].children[0].blur();
-                    }
-                } else if (e.which == 33) {
-                    e.preventDefault();
-
-                    var y = parseInt(jexcel.current.selectedCell[1]);
-                    var displaySize = Math.floor(
-                        jexcel.current.content.offsetHeight /
-                        jexcel.current.records[
-                            jexcel.current.selectedCell[3]
-                        ][jexcel.current.selectedCell[2]].offsetHeight -
-                        1
-                    );
-
-                    //find first visible row
-                    var firstVisibleY = -1;
-                    var tableEl = jexcel.current.content.getBoundingClientRect();
-                    for (var i = y < 30 ? 0 : y - 30; i < y + 30; i++) {
-                        var rowEl = jexcel.current.rows[
-                            i
-                        ].getBoundingClientRect();
-
-                        if (
-                            rowEl.top <= tableEl.top
-                                ? tableEl.top - rowEl.top <= rowEl.height
-                                : rowEl.bottom - tableEl.bottom <= rowEl.height
-                        ) {
-                            firstVisibleY = i + 1;
-                            break;
-                        }
-                    }
-
-                    //simulate up and down key press (currently best solution because it sets scrollbar properly)
-                    for (
-                        var i = 0;
-                        i < displaySize + (y - firstVisibleY) - 1;
-                        i++
-                    ) {
-                        jexcel.current.up();
-                    }
-
-                    for (var i = 0; i < y - firstVisibleY - 1; i++) {
-                        jexcel.current.down();
-                    }
-                    //PageDown
-                } else if (e.which == 34) {
-                    e.preventDefault();
-
-                    var y = parseInt(jexcel.current.selectedCell[1]);
-                    var displaySize = Math.floor(
-                        jexcel.current.content.offsetHeight /
-                        jexcel.current.records[
-                            jexcel.current.selectedCell[3]
-                        ][jexcel.current.selectedCell[2]].offsetHeight -
-                        1
-                    );
-
-                    //find first visible row
-                    var firstVisibleY = -1;
-                    var tableEl = jexcel.current.content.getBoundingClientRect();
-                    for (var i = y < 30 ? 0 : y - 30; i < y + 30; i++) {
-                        var rowEl = jexcel.current.rows[
-                            i
-                        ].getBoundingClientRect();
-
-                        if (
-                            rowEl.top <= tableEl.top
-                                ? tableEl.top - rowEl.top <= rowEl.height
-                                : rowEl.bottom - tableEl.bottom <= rowEl.height
-                        ) {
-                            firstVisibleY = i + 1;
-                            break;
-                        }
-                    }
-
-                    //simulate up and down key press (currently best solution because it sets scrollbar properly)
-                    for (
-                        var i = y - firstVisibleY;
-                        i < 2 * displaySize - 1;
-                        i++
-                    ) {
-                        jexcel.current.down();
-                    }
-
-                    for (
-                        var i = 0;
-                        i < displaySize - (y - firstVisibleY);
-                        i++
-                    ) {
-                        jexcel.current.up();
                     }
                 }
             }
@@ -16155,6 +16070,63 @@ if (!jSuites && typeof require === "function") {
                         jexcel.current.right();
                     }
                     e.preventDefault();
+
+                    //PageDown functionality
+                } else if (e.which == 34) {
+                    e.preventDefault();
+
+                    // 1.   Get all headers height and get the largest height: jexcel.current.headers[0].offsetHeight
+                    if (jexcel.current.headers) {
+
+                        var firstHeaderHeight = jexcel.current.headers[0].offsetHeight;
+
+                        jexcel.current.headers.forEach(header => {
+                            // Get the height and if the height is larger than the previous save it into the variable
+                            if (header.offsetHeight >= firstHeaderHeight) {
+                                firstHeaderHeight = header.offsetHeight
+                            };
+                        });
+                    }
+
+                    // 2.   Calculating the distance from the top of the table to the bottom of the page
+                    // 2.1  First we get top position of the table:
+                    var tableTopPosition = jexcel.current.content.getBoundingClientRect().top;
+
+                    // 3.   Calculate visibleArea from table top position and the size of the html body
+                    var visibleAreaSize = document.body.clientHeight - tableTopPosition - firstHeaderHeight;
+
+                    // 4.   Get row height of all the rows in the table: jexcel.current.offsetHeight
+                    if (jexcel.current.rows) {
+                        jexcel.current.rows.forEach(row => {
+
+                            // and substract row height from the visible area
+                            visibleAreaSize = visibleAreaSize - row.offsetHeight;
+
+                            if (visibleAreaSize > 0) {
+                                numberOfVisibleRows = numberOfVisibleRows + 1;
+                            }
+                        });
+                    }
+
+                    // 5.   Move to the last visible row                 
+                    for (let i = 0; i < numberOfVisibleRows; i++) {
+                        jexcel.current.down();
+                        jexcel.current.getSelectedRows(false)[0].scrollIntoView(false);
+                    }
+
+                    // 5.1  Set numberOfVisibleRows to zero
+                    numberOfVisibleRows = 0;
+
+                    //PageUp
+                } else if (e.which == 33) {
+                    e.preventDefault();
+
+                    // 5.   Move to the first visible row
+                    for (let i = 30; i > 0; i--) {
+                        jexcel.current.up();
+                        jexcel.current.getSelectedRows(false)[0].scrollIntoView(false);
+                    }
+
                 } else {
                     if ((e.ctrlKey || e.metaKey) && !e.shiftKey) {
                         if (e.which == 65) {
@@ -17220,17 +17192,17 @@ if (!jSuites && typeof require === "function") {
                         if (jexcel.current.getSelectedRows(true).length > 1) {
                             minRow = selectedRows[0];
                             maxRow = selectedRows[selectedRows.length - 1];
-                        } 
+                        }
 
                         if (jexcel.current.getSelectedColumns().length == 1) {
                             minCol = selectedColumns[0];
                             maxCol = selectedColumns[0];
                         }
-                        
+
                         if (jexcel.current.getSelectedColumns().length > 1) {
                             minCol = selectedColumns[0];
                             maxCol = selectedColumns[selectedColumns.length - 1];
-                        } 
+                        }
 
                         for (var row = minRow; row <= maxRow; row++) {
                             for (var col = minCol; col <= maxCol; col++) {
@@ -18170,6 +18142,11 @@ if (!jSuites && typeof require === "function") {
 
         return component;
     })();
+
+    /**
+     * Custom built functions
+     */
+
 
     /**
      * Jquery Support
