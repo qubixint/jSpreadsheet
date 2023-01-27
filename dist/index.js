@@ -15991,27 +15991,11 @@ if (!jSuites && typeof require === "function") {
                     if (jexcel.current.options.editable == true) {
                         if (jexcel.current.selectedRow) {
                             if (jexcel.current.options.allowDeleteRow == true) {
-                                if (
-                                    confirm(
-                                        jexcel.current.options.text
-                                            .areYouSureToDeleteTheSelectedRows
-                                    )
-                                ) {
-                                    jexcel.current.deleteRow();
-                                }
+                                jexcel.current.deleteRow();
                             }
                         } else if (jexcel.current.selectedHeader) {
-                            if (
-                                jexcel.current.options.allowDeleteColumn == true
-                            ) {
-                                if (
-                                    confirm(
-                                        jexcel.current.options.text
-                                            .areYouSureToDeleteTheSelectedColumns
-                                    )
-                                ) {
-                                    jexcel.current.deleteColumn();
-                                }
+                            if (jexcel.current.options.allowDeleteColumn == true) {
+                                jexcel.current.deleteColumn();
                             }
                         } else {
                             // Change value
