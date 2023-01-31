@@ -13894,7 +13894,7 @@ if (!jSuites && typeof require === "function") {
                 var results = obj.rows;
             }
             var test = 0;
-            if (results.length > 100) {
+            if (results.length > 200) {
                 // Get the first element in the page
                 var item = parseInt(
                     obj.tbody.firstChild.getAttribute("data-y")
@@ -13917,7 +13917,7 @@ if (!jSuites && typeof require === "function") {
                                     obj.tbody.firstChild
                                 );
                             }
-                            if (obj.tbody.children.length > 100) {
+                            if (obj.tbody.children.length > 200) {
                                 obj.tbody.removeChild(obj.tbody.lastChild);
                                 test = 1;
                             }
@@ -13936,7 +13936,7 @@ if (!jSuites && typeof require === "function") {
                 var results = obj.rows;
             }
             var test = 0;
-            if (results.length > 100) {
+            if (results.length > 200) {
                 // Get the last element in the page
                 var item = parseInt(obj.tbody.lastChild.getAttribute("data-y"));
                 if (obj.options.search == true && obj.results) {
@@ -13950,7 +13950,7 @@ if (!jSuites && typeof require === "function") {
                             } else {
                                 obj.tbody.appendChild(obj.rows[item]);
                             }
-                            if (obj.tbody.children.length > 100) {
+                            if (obj.tbody.children.length > 200) {
                                 obj.tbody.removeChild(obj.tbody.firstChild);
                                 test = 1;
                             }
