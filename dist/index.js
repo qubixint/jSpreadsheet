@@ -8436,6 +8436,12 @@ if (!jSuites && typeof require === "function") {
                     }
                 }
             }
+
+            // Add custom class
+            if (obj.options.columns[i].class) {
+                td.classList.add(obj.options.columns[i].class)
+            }
+            
             return td;
         };
 
