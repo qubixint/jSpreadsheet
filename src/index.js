@@ -11784,7 +11784,7 @@ if (!jSuites && typeof require === "function") {
          * @param integer numOfRows - number of lines
          * @return void
          */
-        obj.deleteRow = function (rowNumber, numOfRows) {
+        obj.deleteRow = function (rowNumber, numOfRows, skipOnbeforedeleterow = false) {
             // Global Configuration
             if (obj.options.allowDeleteRow == true) {
                 if (
@@ -11828,6 +11828,7 @@ if (!jSuites && typeof require === "function") {
 
                     // Onbeforedeleterow
                     if (
+                        !skipOnbeforedeleterow &&
                         obj.dispatch(
                             "onbeforedeleterow",
                             el,
