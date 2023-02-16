@@ -13861,7 +13861,7 @@ if (!jSuites && typeof require === "function") {
             }
 
             // Per page
-            var quantityPerPage = 100;
+            var quantityPerPage = 200;
 
             // pageNumber
             if (pageNumber == null || pageNumber == -1) {
@@ -13874,9 +13874,14 @@ if (!jSuites && typeof require === "function") {
             if (finalRow > results.length) {
                 finalRow = results.length;
             }
-            startRow = finalRow - 100;
+            startRow = finalRow - quantityPerPage;
             if (startRow < 0) {
                 startRow = 0;
+            }
+
+            // Remove existing items
+            while (obj.tbody.children.length) {
+                obj.tbody.removeChild(obj.tbody.firstChild);
             }
 
             // Appeding items
@@ -13885,10 +13890,6 @@ if (!jSuites && typeof require === "function") {
                     obj.tbody.appendChild(obj.rows[results[j]]);
                 } else {
                     obj.tbody.appendChild(obj.rows[j]);
-                }
-
-                if (obj.tbody.children.length > quantityPerPage) {
-                    obj.tbody.removeChild(obj.tbody.firstChild);
                 }
             }
         };
@@ -15977,16 +15978,24 @@ if (!jSuites && typeof require === "function") {
                     jexcel.current.right(e.shiftKey, e.ctrlKey);
                     e.preventDefault();
                 } else if (e.which == 38) {
-                    jexcel.current.up(e.shiftKey, e.ctrlKey);
+                    if (e.ctrlKey) {
+                        jexcel.current.first(e.shiftKey, e.ctrlKey);
+                    } else {
+                        jexcel.current.up(e.shiftKey, e.ctrlKey);
+                    }
                     e.preventDefault();
                 } else if (e.which == 40) {
-                    jexcel.current.down(e.shiftKey, e.ctrlKey);
+                    if (e.ctrlKey) {
+                        jexcel.current.last(e.shiftKey, e.ctrlKey);
+                    } else {
+                        jexcel.current.down(e.shiftKey, e.ctrlKey);
+                    }
                     e.preventDefault();
                 } else if (e.which == 36) {
-                    jexcel.current.first(e.shiftKey, e.ctrlKey);
+                    jexcel.current.first(e.shiftKey, e.ctrlKey, true);
                     e.preventDefault();
                 } else if (e.which == 35) {
-                    jexcel.current.last(e.shiftKey, e.ctrlKey);
+                    jexcel.current.last(e.shiftKey, e.ctrlKey, true);
                     e.preventDefault();
                 } else if (e.which == 32) {
                     if (jexcel.current.options.editable == true) {
@@ -16090,7 +16099,9 @@ if (!jSuites && typeof require === "function") {
                             // and substract row height from the visible area
                             visibleAreaSize = visibleAreaSize - row.offsetHeight;
 
-                            if (visibleAreaSize > 0) {
+                            if (visibleAreaSize < row.offsetHeight) {
+                                return;
+                            } else if (visibleAreaSize > 0 && row.offsetHeight > 0) {
                                 numberOfVisibleRows = numberOfVisibleRows + 1;
                             }
                         });
@@ -16098,8 +16109,9 @@ if (!jSuites && typeof require === "function") {
 
                     // 5.   Move to the last visible row                 
                     for (let i = 0; i < numberOfVisibleRows; i++) {
-                        jexcel.current.down();
-                        jexcel.current.getSelectedRows(false)[0].scrollIntoView(false);
+                        jexcel.current.down(e.shiftKey, e.ctrlKey);
+                        let selectedRows = jexcel.current.getSelectedRows(false);
+                        selectedRows[selectedRows.length - 1].scrollIntoView(false);
                     }
 
                     // 5.1  Set numberOfVisibleRows to zero
@@ -16109,12 +16121,50 @@ if (!jSuites && typeof require === "function") {
                 } else if (e.which == 33) {
                     e.preventDefault();
 
+                    // 1.   Get all headers height and get the largest height: jexcel.current.headers[0].offsetHeight
+                    if (jexcel.current.headers) {
+
+                        var firstHeaderHeight = jexcel.current.headers[0].offsetHeight;
+
+                        jexcel.current.headers.forEach(header => {
+                            // Get the height and if the height is larger than the previous save it into the variable
+                            if (header.offsetHeight >= firstHeaderHeight) {
+                                firstHeaderHeight = header.offsetHeight
+                            };
+                        });
+                    }
+
+                    // 2.   Calculating the distance from the top of the table to the bottom of the page
+                    // 2.1  First we get top position of the table:
+                    var tableTopPosition = jexcel.current.content.getBoundingClientRect().top;
+
+                    // 3.   Calculate visibleArea from table top position and the size of the html body
+                    var visibleAreaSize = document.body.clientHeight - tableTopPosition - firstHeaderHeight;
+
+                    // 4.   Get row height of all the rows in the table: jexcel.current.offsetHeight
+                    if (jexcel.current.rows) {
+                        jexcel.current.rows.forEach(row => {
+
+                            // and substract row height from the visible area
+                            visibleAreaSize = visibleAreaSize - row.offsetHeight;
+
+                            if (visibleAreaSize < row.offsetHeight) {
+                                return;
+                            } else if (visibleAreaSize > 0 && row.offsetHeight > 0) {
+                                numberOfVisibleRows = numberOfVisibleRows + 1;
+                            }
+                        });
+                    }
+                
                     // 5.   Move to the first visible row
-                    for (let i = 30; i > 0; i--) {
-                        jexcel.current.up();
+                    for (let i = 0; i < numberOfVisibleRows; i++) {
+                        jexcel.current.up(e.shiftKey, e.ctrlKey);
                         jexcel.current.getSelectedRows(false)[0].scrollIntoView(false);
                     }
 
+                    // 5.1  Set numberOfVisibleRows to zero
+                    numberOfVisibleRows = 0;
+                    
                 } else {
                     if ((e.ctrlKey || e.metaKey) && !e.shiftKey) {
                         if (e.which == 65) {
