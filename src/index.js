@@ -16109,7 +16109,7 @@ if (!jSuites && typeof require === "function") {
 
                     // 5.   Move to the last visible row                 
                     for (let i = 0; i < numberOfVisibleRows; i++) {
-                        jexcel.current.down(e.shiftKey, e.ctrlKey);
+                        jexcel.current.down(e.shiftKey, false);
                         let selectedRows = jexcel.current.getSelectedRows(false);
                         selectedRows[selectedRows.length - 1].scrollIntoView(false);
                     }
@@ -16158,7 +16158,7 @@ if (!jSuites && typeof require === "function") {
                 
                     // 5.   Move to the first visible row
                     for (let i = 0; i < numberOfVisibleRows; i++) {
-                        jexcel.current.up(e.shiftKey, e.ctrlKey);
+                        jexcel.current.up(e.shiftKey, false);
                         jexcel.current.getSelectedRows(false)[0].scrollIntoView(false);
                     }
 
